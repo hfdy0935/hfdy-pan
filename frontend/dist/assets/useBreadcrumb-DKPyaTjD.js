@@ -1,0 +1,1 @@
+import{r as u}from"./vue-office_docx-BTzFQIdC.js";function t(){const e=u([]);return{breadcrumbs:e,switchTo:r=>{const s=e.value.findIndex(c=>c.id===r.id);s===-1?e.value.push(r):e.value.splice(s+1)},replaceExcludeFirst:(...r)=>{e.value=[e.value[0],...r]}}}export{t as u};

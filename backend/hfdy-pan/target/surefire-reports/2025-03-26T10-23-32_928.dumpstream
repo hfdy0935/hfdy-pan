@@ -1,0 +1,5 @@
+# Created at 2025-03-26T10:23:33.166
+Boot Manifest-JAR contains absolute paths in classpath 'F:\Desktop\hfdy-pan\backend\hfdy-pan\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

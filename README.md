@@ -34,7 +34,7 @@ docker compose up
 # 访问localhost
 ```
 
-## :white_large_square: 截图
+## 2. :white_large_square: 截图
 
 
 ### 1. 登录

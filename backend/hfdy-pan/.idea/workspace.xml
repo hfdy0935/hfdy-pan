@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="41eaac0d-0529-4ea1-b5d6-cd0b0757392d" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/annotation/NeedAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/annotation/UploadSpeedLimit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/aspect/NeedAdminAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/aspect/UploadSpeedLimitAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/FileConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/MinIOConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/PublicShareController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/RecycleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/ShareController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/TransferFileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/UploadFileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/DeleteChunksDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/DeleteItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/DownloadFileDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/GetFileStatusDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/InstantUploadDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/MoveItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/RecoverRecycleDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/SaveShareToMyPanDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/ShareFileDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/UpdateMyShareFilesDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/UpdateMyShareOptionsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/UploadFileChunkDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/user/UpdateUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/Share.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/ShareFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetFileStatusVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetFolderLevelInfoVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetMyShareVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetRecycleVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetShareFileVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetUploadedChunkIndexesVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/ShareFileVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/user/UserInfoVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/user/UserListVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/ShareFileMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/ShareMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/RecycleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/ResourceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/TransferFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/UploadFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/CommonFileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/RecycleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/ResourceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/TransFileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/UploadFileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/task/ClearExpiredShare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/FfmpegUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/FileReqRespUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/FileUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/api/recycle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/composable/useFolderLevelTree.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/composable/useTable.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/types/recycle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/views/recycle/table-cell.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/annotation/VerifyParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/annotation/VerifyParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/config/WebMvcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/config/WebMvcConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/JwtConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/JwtConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/RedisConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/RedisConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/UserConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/UserConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/CommonFileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/ResourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/bo/QueryFileBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/bo/QueryFileListBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/CreateFolderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/CreateFolderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/QueryFileListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/QueryItemListDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/RenameFileDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/RenameItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/user/RegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/user/RegisterDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/File.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/HttpCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/HttpCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/file/FileMediaTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/file/FileMediaTypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/file/FileStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/file/FileStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/ApiResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/ApiResp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/FileDetailVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/ItemDetailVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/QueryFileListVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/QueryItemListVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/user/LoginVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/user/LoginVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/exception/BusinessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/interceptor/JwtInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/FileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/FileMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/CommonFileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/FileServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/MinIOUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/MinIOUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/RedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/.eslintrc-auto-import.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/.eslintrc-auto-import.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/auto-imports.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/auto-imports.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/api/entry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/api/entry.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/api/file.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/api/file.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/clean.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/del.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/excel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/exe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/folder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/music.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/no_data.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/others.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/pdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/ppt1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/txt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/video.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/word.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/zip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/demo_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/composable/useEditFileName.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/composable/useEditFileName.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/composable/useEmailCheckCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/composable/useEmailCheckCode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/constants/fileIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/constants/fileIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/constants/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/constants/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/constants/menuData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/constants/menuData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/layout/component/Content.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/layout/component/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/layout/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/routes/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/stores/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/stores/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/stores/modules/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/stores/modules/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/stores/modules/file.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/stores/modules/file.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/stores/modules/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/stores/modules/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/types/entry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/types/entry.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/types/file.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/types/file.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/types/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/types/home.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/utils/calc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/utils/calc.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/utils/is.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/utils/is.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/utils/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/utils/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/admin/FileList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/admin/Setting.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/admin/UserList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/entry/component/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/entry/component/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/entry/component/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/entry/component/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/entry/component/UpdatePassword.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/entry/component/UpdatePassword.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/entry/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/entry/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/contextmenu/blank.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/contextmenu/normal.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/contextmenu/utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-breadcrumb.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-detail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-operation.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-panigation.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/table-td-item.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/file/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/recycle/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/recycle/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/share/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/vite.config.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2tcfHPlMsgF4RGHHL57Vm3DeMhA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.resources/dockercompose.dev.yml.mysql: Compose 部署.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.resources/dockercompose.dev.yml: Compose 部署.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.resources/dockercompose.yml.mysql: Compose 部署.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.resources/dockercompose.yml: Compose 部署.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.hfdy-pan [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.hfdy-pan [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.hfdy-pan [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.hfdy-pan [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.hfdy-pan [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;数据库检测器&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.HfdyPanApplication.executor&quot;: &quot;Run&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Desktop/hfdy-pan/backend/hfdy-pan/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;F:\\IntelliJ IDEA 2024.3.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Desktop\hfdy-pan\backend\hfdy-pan\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.HfdyPanApplication">
+    <configuration name="HfdyPanApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="hfdy-pan" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hfdy.hfdypan.HfdyPanApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="resources/dockercompose.dev.yml: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="src/main/resources/dockercompose.dev.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="resources/dockercompose.dev.yml.mysql: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mysql" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/main/resources/dockercompose.dev.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="resources/dockercompose.yml: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="src/main/resources/dockercompose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="resources/dockercompose.yml.mysql: Compose 部署" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mysql" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/main/resources/dockercompose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.resources/dockercompose.dev.yml: Compose 部署" />
+        <item itemvalue="Docker.resources/dockercompose.dev.yml.mysql: Compose 部署" />
+        <item itemvalue="Docker.resources/dockercompose.yml: Compose 部署" />
+        <item itemvalue="Docker.resources/dockercompose.yml.mysql: Compose 部署" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="逻辑" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="41eaac0d-0529-4ea1-b5d6-cd0b0757392d" name="更改" comment="" />
+      <created>1740656196565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740656196565</updated>
+      <workItem from="1740656198324" duration="933000" />
+      <workItem from="1740658309003" duration="15672000" />
+      <workItem from="1740699919315" duration="19835000" />
+      <workItem from="1740728854420" duration="2057000" />
+      <workItem from="1740746507156" duration="635000" />
+      <workItem from="1740788712069" duration="4922000" />
+      <workItem from="1740794152644" duration="23384000" />
+      <workItem from="1740830750111" duration="10080000" />
+      <workItem from="1740900185600" duration="19897000" />
+      <workItem from="1740964158373" duration="16502000" />
+      <workItem from="1741002039904" duration="2492000" />
+      <workItem from="1741045516260" duration="10383000" />
+      <workItem from="1741064020855" duration="12036000" />
+      <workItem from="1741085495350" duration="432000" />
+      <workItem from="1741090968096" duration="15546000" />
+      <workItem from="1741132695261" duration="5200000" />
+      <workItem from="1741138797575" duration="633000" />
+      <workItem from="1741139490632" duration="9936000" />
+      <workItem from="1741155889376" duration="101000" />
+      <workItem from="1741156035117" duration="583000" />
+      <workItem from="1741156630692" duration="8680000" />
+      <workItem from="1741175694727" duration="1868000" />
+      <workItem from="1741308566272" duration="9360000" />
+      <workItem from="1741352036410" duration="10342000" />
+      <workItem from="1741392618499" duration="16119000" />
+      <workItem from="1741416127382" duration="816000" />
+      <workItem from="1741417048639" duration="3287000" />
+      <workItem from="1741422352386" duration="4779000" />
+      <workItem from="1741480501420" duration="14101000" />
+      <workItem from="1741497911958" duration="3485000" />
+      <workItem from="1741501792812" duration="2366000" />
+      <workItem from="1741504650052" duration="10629000" />
+      <workItem from="1741519535451" duration="5816000" />
+      <workItem from="1741562847874" duration="18286000" />
+      <workItem from="1741591996274" duration="9229000" />
+      <workItem from="1741612788851" duration="7666000" />
+      <workItem from="1741652946556" duration="8413000" />
+      <workItem from="1741669856853" duration="11221000" />
+      <workItem from="1741708168023" duration="3863000" />
+      <workItem from="1741740105199" duration="8344000" />
+      <workItem from="1741785059753" duration="3361000" />
+      <workItem from="1741824523000" duration="2446000" />
+      <workItem from="1741839496515" duration="5030000" />
+      <workItem from="1741863503217" duration="12203000" />
+      <workItem from="1741911645377" duration="2701000" />
+      <workItem from="1741940232569" duration="4964000" />
+      <workItem from="1741964461036" duration="878000" />
+      <workItem from="1742102059345" duration="3685000" />
+      <workItem from="1742107665054" duration="11487000" />
+      <workItem from="1742124910885" duration="12307000" />
+      <workItem from="1742171800255" duration="7096000" />
+      <workItem from="1742190616481" duration="7082000" />
+      <workItem from="1742209864928" duration="4965000" />
+      <workItem from="1742260115583" duration="51000" />
+      <workItem from="1742270172517" duration="2608000" />
+      <workItem from="1742272795006" duration="74000" />
+      <workItem from="1742273075632" duration="54000" />
+      <workItem from="1742288642659" duration="639000" />
+      <workItem from="1742300251828" duration="28000" />
+      <workItem from="1742300365795" duration="1045000" />
+      <workItem from="1742302066324" duration="5338000" />
+      <workItem from="1742310584982" duration="140000" />
+      <workItem from="1742314923109" duration="65000" />
+      <workItem from="1742315365542" duration="21000" />
+      <workItem from="1742740504806" duration="225000" />
+      <workItem from="1742741577865" duration="262000" />
+      <workItem from="1742745267319" duration="185000" />
+      <workItem from="1742901916685" duration="1260000" />
+      <workItem from="1742903272699" duration="108000" />
+      <workItem from="1742904167188" duration="756000" />
+      <workItem from="1742910055877" duration="3586000" />
+      <workItem from="1742916036209" duration="176000" />
+      <workItem from="1742951727899" duration="397000" />
+      <workItem from="1742952373862" duration="779000" />
+      <workItem from="1742953381005" duration="250000" />
+      <workItem from="1742953868010" duration="126000" />
+      <workItem from="1742954289445" duration="405000" />
+      <workItem from="1742955239892" duration="584000" />
+      <workItem from="1742956185526" duration="53000" />
+      <workItem from="1742956632941" duration="37000" />
+      <workItem from="1742957760548" duration="317000" />
+      <workItem from="1742958104015" duration="32000" />
+      <workItem from="1742958282431" duration="26000" />
+      <workItem from="1742962882138" duration="1134000" />
+      <workItem from="1742992651618" duration="5745000" />
+      <workItem from="1743075513879" duration="64000" />
+      <workItem from="1743080002238" duration="63000" />
+      <workItem from="1743081417475" duration="28000" />
+      <workItem from="1743123520990" duration="107000" />
+      <workItem from="1743128138232" duration="43000" />
+      <workItem from="1743128338875" duration="21000" />
+      <workItem from="1743128510449" duration="102000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="io.minio.errors.ErrorResponseException" memberName="cause" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="lambdaQuery().in(File::getName, filenames).list()" language="JAVA" />
+        <watch expression="target" />
+        <watch expression="    /**&#10;     * 合并视频、转码、存储，默认转码完成时视频已上传完毕&#10;     *&#10;     * @param category 文件分类&#10;     * @param filename 文件名&#10;     * @param src      数据库中视频文件的路径&#10;     * @param id       数据库中的文件id&#10;     */&#10;    boolean transVideo(String category, String filename, String src, String id);" />
+        <watch expression="/api/resource/" />
+        <watch expression="fileList.get(0)" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
