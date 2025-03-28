@@ -67,4 +67,17 @@ public class User {
     @TableField("total_space")
     private Long totalSpace;
 
+
+    @TableField("is_vip")
+    private Integer isVip;
+
+    @TableField("is_admin")
+    private Integer isAdmin;
+
+    @TableField("upload_limit")
+    private Integer uploadLimit;
+
+    @TableField("download_speed")
+    private long downloadSpeed;
+
 }

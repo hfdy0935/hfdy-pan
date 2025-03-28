@@ -25,10 +25,31 @@ public class RedisConstants {
     /**
      * 邮件验证码过期时间2min，单位为秒
      */
-    public static final Long EMAIL_EXP_TIME = 60 * 2L;
+    public static final Long EMAIL_CHECK_CODE_EXPIRE = 60 * 2L;
 
     /**
      * redis中图片验证码过期时间，单位秒
      */
-    public static final Long CAPTCHA_EXI_TIME = 60L;
+    public static final Long CAPTCHA_EXPIRE = 60L;
+
+    /**
+     * 上传文件分块在redis中的key
+     */
+    public static final String UPLOAD_FILE_CHUNK_KEY = "file_chunk";
+    /**
+     * 已上传文件的key，用于秒传
+     */
+    public static final String UPLOAD_FILE_KEY = "uploaded_file";
+    /**
+     * 转码状态的key
+     */
+    public static final String STATUS_KEY = "trans_code_status";
+    /**
+     * 转码状态有效期，60s
+     */
+    public static final Long STATUS_EXPIRE = 60L;
+    /**
+     * 已分享文件id的key
+     */
+    public static final String SHARED_FILE_KEY = "shared_file_key";
 }

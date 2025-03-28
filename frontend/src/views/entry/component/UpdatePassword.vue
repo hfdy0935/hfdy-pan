@@ -13,9 +13,8 @@
           <icon-send />
         </template>
       </a-input>
-      <a-button type="primary" @click="getEmailCheckCode(data.email,1)" v-if="showEmailBtn"
-                :disabled="restSeconds>0"
-                style="height: 36px; min-width: 100px">{{ restSeconds > 0 ? restSeconds + 's' : '发送验证码'
+      <a-button type="primary" @click="getEmailCheckCode(data.email, 1)" v-if="showEmailBtn" :disabled="restSeconds > 0"
+        style="height: 36px; min-width: 100px">{{ restSeconds > 0 ? restSeconds + 's' : '发送验证码'
         }}
       </a-button>
     </a-form-item>
@@ -26,8 +25,7 @@
         </template>
       </a-input-password>
     </a-form-item>
-    <a-form-item field="confirmPassword" hide-label
-                 validate-trigger="blur">
+    <a-form-item field="confirmPassword" hide-label validate-trigger="blur">
       <a-input-password v-model.trim="data.confirmPassword" placeholder="请确认密码" allow-clear size="large">
         <template #prepend>
           <icon-lock />
@@ -53,13 +51,12 @@ import Captcha from '@/assets/image/captcha.svg';
 import type { IUpdatePassword } from '@/types/entry';
 import useEmailCheckCode from '@/composable/useEmailCheckCode';
 import { getRules } from '@/views/entry/validate';
-import { Message } from '@arco-design/web-vue';
+import { Form, Message } from '@arco-design/web-vue';
 import { reqUpdatePassword } from '@/api/entry';
 import {
   IconEmail,
   IconLock,
   IconSend,
-  IconUser
 } from '@arco-design/web-vue/es/icon';
 
 defineOptions({
@@ -74,6 +71,7 @@ const data = ref<IUpdatePassword>({} as IUpdatePassword);
 // 验证规则
 const rules = computed(() => getRules(data.value.password));
 const { restSeconds, getEmailCheckCode, formRef, showEmailBtn } = useEmailCheckCode();
+
 
 const submit = async () => {
   // 校验表单
@@ -94,7 +92,6 @@ const submit = async () => {
       emits('getCaptcha');
     }
   } catch (e) {
-    Message.error('修改失败');
     emits('getCaptcha');
   } finally {
     isLoading.value = false;

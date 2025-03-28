@@ -1,5 +1,6 @@
 package com.hfdy.hfdypan.utils;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -50,6 +51,22 @@ public class StringUtil {
      * @return
      */
     public static String getRandomUUid() {
-        return UUID.randomUUID().toString();
+        return UUID.randomUUID().toString().replace("-", "");
+    }
+
+
+    /**
+     * 请求来源是否是获取分享文件节目
+     *
+     * @param request
+     * @return
+     */
+    public static boolean isFromPublicShareFile(HttpServletRequest request) {
+        String shareId = request.getHeader("shareId");
+        // 获取m3u8、ts等的请求，会携带一个请求头
+        boolean case1 = shareId != null && !shareId.isEmpty();
+        // 直接GET访问
+        boolean case2 = request.getRequestURL().indexOf("/share/") != -1;
+        return case1 || case2;
     }
 }

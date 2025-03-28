@@ -1,0 +1,45 @@
+server:
+  port: 8002
+  # 和前端请求的接口对应
+  deploy_address: http://localhost:8002
+
+spring:
+  jackson:
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://localhost:3306/hfdy_pan?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 100MB
+
+  mail:
+    host: xxxxxx
+    username: xxxxxx
+    password: xxxxxx
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  logging:
+    pattern:
+      console: "%d %clr(%5p) --- [%5t] %clr(%-40.40c){cyan} : %m %n"
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-field: is_deleted # 全局逻辑删除字段名
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+minio:
+  endpoint: http://localhost:9001
+  accessKey: minio
+  secretKey: minio123
+  bucketName: hfdy-pan

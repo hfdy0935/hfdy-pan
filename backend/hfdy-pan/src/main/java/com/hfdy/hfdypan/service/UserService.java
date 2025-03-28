@@ -55,4 +55,9 @@ public interface UserService extends IService<User> {
      * @param dto
      */
     void updateHomePassword(UpdateHomePasswordDTO dto);
+
+    /**
+     * 更新用户已使用空间大小记录
+     */
+    void updateUserUsedSpace();
 }

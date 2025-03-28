@@ -1,17 +1,17 @@
 package com.hfdy.hfdypan.controller;
 
-import com.hfdy.hfdypan.domain.enums.HttpCodeEnum;
-import com.hfdy.hfdypan.exception.BusinessException;
-import com.hfdy.hfdypan.utils.MinIOUtil;
+import com.hfdy.hfdypan.constants.UserConstants;
+import com.hfdy.hfdypan.domain.entity.User;
+import com.hfdy.hfdypan.mapper.FileMapper;
+import com.hfdy.hfdypan.mapper.UserMapper;
+import com.hfdy.hfdypan.utils.FileReqRespUtil;
+import com.hfdy.hfdypan.utils.ThreadLocalUtil;
 import jakarta.annotation.Resource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URLConnection;
 
 /**
  * @author hf-dy
@@ -19,27 +19,37 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/resource")
+@Slf4j
+@CrossOrigin({"*"})
 public class ResourceController {
 
     @Resource
-    private MinIOUtil minIOUtil;
+    private FileReqRespUtil fileReqRespUtil;
+    @Resource
+    private UserMapper userMapper;
+    @Resource
+    private FileMapper fileMapper;
 
     /**
-     * 根据minio中的文件名获取文件
+     * 根据minio中的文件名获取文件，只支持avatar
      *
      * @param filename
      * @return
      */
-    @GetMapping("/{filename}")
-    public ResponseEntity<byte[]> getFileByName(@PathVariable String filename) {
-        try {
-            byte[] bytes = minIOUtil.getFile(filename);
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-            httpHeaders.setContentLength(bytes.length);
-            return new ResponseEntity<>(bytes, httpHeaders, HttpStatus.OK);
-        } catch (Exception e) {
-            throw new BusinessException(HttpCodeEnum.RESOURCE_ERROR);
-        }
+    @GetMapping("/avatar/{filename}")
+    public void getAvatar(@PathVariable String filename, HttpServletResponse response) {
+        String ct = URLConnection.guessContentTypeFromName(filename);
+        User user = userMapper.selectById(ThreadLocalUtil.getCurrentUserId());
+        long speed = user == null ? UserConstants.DEFAULT_DOWNLOAD_SPEED : user.getDownloadSpeed();
+        fileReqRespUtil.writeStreamToResponse(response, "/avatar/" + filename, ct, speed);
+    }
+
+    @GetMapping("/lyric/{filename}")
+    public void getLyric(@PathVariable String filename, HttpServletResponse response) {
+        log.info("获取歌词");
+        String userId = ThreadLocalUtil.getCurrentUserId();
+        User user = userMapper.selectById(userId);
+        long speed = user == null ? UserConstants.DEFAULT_DOWNLOAD_SPEED : user.getDownloadSpeed();
+        fileReqRespUtil.writeStreamToResponse(response, "/lyric/" + filename, "text/plain", speed);
     }
 }

@@ -37,12 +37,12 @@ public class JwtConstants {
     /**
      * access token有效时间
      */
-    public static final Long ACCESS_TOKEN_EXPIRES = 30 * 60L;
+    public static final Long ACCESS_TOKEN_EXPIRES = 2 * 60 * 60L;
 
     /**
      * refresh token有效时间
      */
-    public static final Long REFRESH_TOKEN_EXPIRES = 6 * 60 * 60L;
+    public static final Long REFRESH_TOKEN_EXPIRES = 12 * 60 * 60L;
 
     /**
      * jwt签发者

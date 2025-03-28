@@ -1,5 +1,6 @@
 package com.hfdy.hfdypan.domain.vo.user;
 
+import com.hfdy.hfdypan.constants.FileConstants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class LoginVO {
     // 用户id
-    private Long userId;
+    private String userId;
     // 用户昵称
     private String nickName;
     // accessToken
@@ -29,4 +30,8 @@ public class LoginVO {
     private Long usedSpace;
     // 总空间大小/B
     private Long totalSpace;
+    // 是不是vip
+    private Integer isVip;
+    private Integer maxFolderLevel = FileConstants.FILE_MAX_LEVEL;
+    private Integer isAdmin;
 }

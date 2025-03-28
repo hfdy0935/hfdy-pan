@@ -72,7 +72,7 @@ public class EmailServiceImpl implements EmailService {
         // 标题
         message.setSubject(title);
         // 内容
-        String content = "验证码是 " + code + "，" + (int) (RedisConstants.EMAIL_EXP_TIME / 60) + "分钟内有效，打死也不要告诉别人哦 ";
+        String content = "验证码是 " + code + "，" + (int) (RedisConstants.EMAIL_CHECK_CODE_EXPIRE / 60) + "分钟内有效，打死也不要告诉别人哦 ";
         message.setText(content);
         // 发送时间
         message.setSentDate(new Date());

@@ -1,5 +1,5 @@
 <template>
-  <a-form :model="data" class="p-4" :rules="rules" ref="formRef">
+  <a-form :model="data" class="p-4" :rules="rules" ref="form">
     <a-form-item field="email" hide-label validate-trigger="blur">
       <a-input v-model.trim="data.email" placeholder="请输入邮箱" allow-clear size="large">
         <template #prepend>
@@ -25,25 +25,25 @@
         </template>
       </a-input>
     </a-form-item>
-    <slot name="bottom" :submit="submit"></slot>
+    <slot name="bottom" :submit></slot>
   </a-form>
 </template>
 
 <script setup lang="ts">
-import { reqGetCaptcha, reqLogin } from '@/api/entry';
+import { reqLogin } from '@/api/entry';
 import Captcha from '@/assets/image/captcha.svg';
-import { useUserStore } from '@/stores';
 import { Form, Message } from '@arco-design/web-vue';
 import { IconEmail, IconLock } from '@arco-design/web-vue/es/icon';
 import { getRules } from '../validate';
 import type { LoginDTO } from '@/types/entry';
+import { useUserStore } from '@/stores/modules/user';
 
 const router = useRouter();
-const isLoading = defineModel(); // 是否加载中
-const { userInfo } = storeToRefs(useUserStore()); // store中的用户信息
-const formRef = ref<InstanceType<typeof Form> | null>(null);
+const isLoading = defineModel();
+const { userInfo } = storeToRefs(useUserStore());
+const formRef = useTemplateRef<InstanceType<typeof Form> | null>('form')
 const data = ref<LoginDTO>({} as LoginDTO); // 登录表单数据
-const rules = computed(() => getRules(data.value.password)); // 验证规则
+const rules = computed(() => getRules(data.value.password));
 /**
  * 提交表单
  */
@@ -62,12 +62,8 @@ const submit = async () => {
       Message.success('登录成功');
       await router.push('/file/all');
     } else Message.error(resp.message);
-    console.log(userInfo.value);
-  } catch (e) {
-    Message.error('登录失败');
   } finally {
     isLoading.value = false;
   }
 };
 </script>
-

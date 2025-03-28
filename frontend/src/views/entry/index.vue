@@ -4,22 +4,22 @@
       <div class="img"></div>
     </a-col>
     <a-col :xs="24" :lg="14" class="col">
-      <a-card class="card pt-6">
+      <a-card class="card pt-2">
         <template #title>
           <div class="title">hfdy 云盘</div>
         </template>
-        <Login v-if="op===EntryOp.LOGIN" v-model="isLoading">
+        <Login v-if="op === EntryOp.LOGIN" v-model="isLoading">
           <template #captcha>
-            <img :src="captchaUrl" class="w-32 cursor-pointer select-none" @click="getCaptcha" alt="验证码" />
+            <img :src="captchaUrl" class="w-28 cursor-pointer select-none" @click="getCaptcha" alt="验证码" />
           </template>
-          <template #bottom="{submit}">
+          <template #bottom="{ submit }">
             <a-form-item hide-label>
               <a-checkbox v-model="rememberMe" style="user-select: none">记住我</a-checkbox>
             </a-form-item>
             <a-form-item hide-label>
               <div class="w-full flex justify-between select-none">
-                <a-link :hoverable="false" @click="op=EntryOp.REGISTER">没有账号？去注册</a-link>
-                <a-link :hoverable="false" @click="op=EntryOp.UPDATE_PASSWORD">忘记密码？</a-link>
+                <a-link :hoverable="false" @click="op = EntryOp.REGISTER">没有账号？去注册</a-link>
+                <a-link :hoverable="false" @click="op = EntryOp.UPDATE_PASSWORD">忘记密码？</a-link>
               </div>
             </a-form-item>
             <a-form-item hide-label>
@@ -28,18 +28,18 @@
             </a-form-item>
           </template>
         </Login>
-        <Register v-if="op===EntryOp.REGISTER" v-model="isLoading" @getCaptcha="getCaptcha">
+        <Register v-if="op === EntryOp.REGISTER" v-model="isLoading" @getCaptcha="getCaptcha">
           <template #captcha>
             <img :src="captchaUrl" class="w-32 cursor-pointer select-none" @click="getCaptcha" alt="验证码" />
           </template>
-          <template #bottom="{submit}">
+          <template #bottom="{ submit }">
             <a-form-item hide-label>
               <a-checkbox v-model="rememberMe" style="user-select: none">记住我</a-checkbox>
             </a-form-item>
             <a-form-item hide-label>
               <div class="w-full flex justify-between select-none">
-                <a-link :hoverable="false" @click="op=EntryOp.UPDATE_PASSWORD">忘记密码？</a-link>
-                <a-link :hoverable="false" @click="op=EntryOp.LOGIN">已有帐号？去登录</a-link>
+                <a-link :hoverable="false" @click="op = EntryOp.UPDATE_PASSWORD">忘记密码？</a-link>
+                <a-link :hoverable="false" @click="op = EntryOp.LOGIN">已有帐号？去登录</a-link>
               </div>
             </a-form-item>
             <a-form-item hide-label>
@@ -48,18 +48,18 @@
             </a-form-item>
           </template>
         </Register>
-        <update-password v-if="op===EntryOp.UPDATE_PASSWORD" v-model="isLoading" @getCaptcha="getCaptcha">
+        <update-password v-if="op === EntryOp.UPDATE_PASSWORD" v-model="isLoading" @getCaptcha="getCaptcha">
           <template #captcha>
             <img :src="captchaUrl" class="w-32 cursor-pointer select-none" @click="getCaptcha" alt="验证码" />
           </template>
-          <template #bottom="{submit}">
+          <template #bottom="{ submit }">
             <a-form-item hide-label>
               <a-checkbox v-model="rememberMe" style="user-select: none">记住我</a-checkbox>
             </a-form-item>
             <a-form-item hide-label>
               <div class="w-full flex justify-between select-none">
-                <a-link :hoverable="false" @click="op=EntryOp.LOGIN">已有帐号？去登录</a-link>
-                <a-link :hoverable="false" @click="op=EntryOp.REGISTER">没有账号？去注册</a-link>
+                <a-link :hoverable="false" @click="op = EntryOp.LOGIN">已有帐号？去登录</a-link>
+                <a-link :hoverable="false" @click="op = EntryOp.REGISTER">没有账号？去注册</a-link>
               </div>
             </a-form-item>
             <a-form-item hide-label>
@@ -116,13 +116,12 @@ watch(op, getCaptcha, {
   height: 100%;
   background: url(@/assets/image/login_bg.png) no-repeat;
   background-size: cover;
-  padding: 20px;
+  padding: 0 20px;
 
   .col {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
 
     .img {
       width: 400px;
@@ -140,7 +139,6 @@ watch(op, getCaptcha, {
     .card {
       width: 100%;
       max-width: 600px;
-      height: 600px;
 
       .title {
         text-align: center;

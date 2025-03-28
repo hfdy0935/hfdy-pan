@@ -5,7 +5,8 @@ import type {
   SendEmailCheckCodeDTO,
   UpdatePasswordDTO,
   LoginVO,
-  RegisterVO
+  RegisterVO,
+  UserInfoVO
 } from '@/types/entry';
 import request from '@/utils/request';
 import type { AxiosResponse } from 'axios';
@@ -93,4 +94,16 @@ export function reqRegister(data: RegisterDTO) {
     method: 'POST',
     data
   });
+}
+
+
+/**
+ * 获取用户最新信息
+ * @returns 
+ */
+export function reqUserInfo() {
+  return request<any, CommonResponse<UserInfoVO>>({
+    url: '/userInfo',
+    method: 'GET'
+  })
 }

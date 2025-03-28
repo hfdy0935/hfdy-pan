@@ -13,3 +13,5 @@ export enum EntryOp {
 export const EMAIL_EXP_TIME = 120;
 
 
+export const HBlue = '#165DFF'
+

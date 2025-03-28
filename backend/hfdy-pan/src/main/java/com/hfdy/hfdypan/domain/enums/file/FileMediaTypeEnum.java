@@ -59,11 +59,11 @@ public enum FileMediaTypeEnum {
     CODE("code", "代码");
 
     @Getter
-    private final String mediaTYpe;
+    private final String mediaType;
     private final String description;
 
-    FileMediaTypeEnum(String mediaTYpe, String description) {
-        this.mediaTYpe = mediaTYpe;
+    FileMediaTypeEnum(String mediaType, String description) {
+        this.mediaType = mediaType;
         this.description = description;
     }
 
@@ -73,7 +73,7 @@ public enum FileMediaTypeEnum {
     private static final Map<String, FileMediaTypeEnum> lookup = new HashMap<>();
 
     static {
-        Arrays.stream(values()).forEach(el -> lookup.put(el.mediaTYpe, el));
+        Arrays.stream(values()).forEach(el -> lookup.put(el.mediaType, el));
     }
 
     /**

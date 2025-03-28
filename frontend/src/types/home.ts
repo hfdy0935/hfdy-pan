@@ -1,5 +1,6 @@
 import type { FileItem } from '@arco-design/web-vue';
 import type { VNode } from 'vue';
+import type { IItemCategory } from './file';
 
 /**
  * main页面修改用户信息请求体
@@ -37,4 +38,5 @@ export interface IMenuItem {
   isShow: boolean;
   children?: IMenuItem[];
   tips?: string;
+  category?: IItemCategory
 }

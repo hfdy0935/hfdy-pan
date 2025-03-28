@@ -1,4 +1,4 @@
-import { useUserStore } from '@/stores';
+import { useUserStore } from '@/stores/modules/user';
 import { createRouter, createWebHistory } from 'vue-router';
 import { Message } from '@arco-design/web-vue';
 
@@ -24,49 +24,41 @@ const router = createRouter({
         {
           path: '/share',
           name: 'share',
-          component: () => import('@/views/share')
+          component: () => import('@/views/share/manage-share-file/index.vue')
         },
         {
           path: '/recycle',
           name: 'recycle',
-          component: () => import('@/views/recycle')
+          component: () => import('@/views/recycle/index.vue')
         },
         {
           path: '/admin',
           name: 'admin',
-          redirect: '/admin/setting',
-          children: [
-            {
-              path: '/admin/filelist',
-              name: 'fileList',
-              component: () => import('@/views/admin/FileList')
-            },
-            {
-              path: '/admin/userlist',
-              name: 'userList',
-              component: () => import('@/views/admin/UserList')
-            },
-            {
-              path: '/admin/setting',
-              name: 'setting',
-              component: () => import('@/views/admin/Setting')
-            }
-          ]
+          component: () => import('@/views/admin/index.vue'),
+          meta: {
+            hasAdminPermission: true
+          }
         }
       ]
-    }
+    },
+    {
+      path: '/share/:shareId',
+      name: 'getShareFile',
+      component: () => import('@/views/share/get-share-file/index.vue')
+    },
   ]
 });
 
 router.beforeEach((to, from) => {
   const { userInfo } = storeToRefs(useUserStore());
+  if (/share\/.*?/.test(to.path)) return true
   if (to.path !== '/entry' && !userInfo.value.accessToken) {
-    Message.warning('登录失效，请重新登录');
+    Message.warning('登录已过期或没有权限，请重新登录');
     return '/entry';
   } else if (to.path === '/entry' && userInfo.value.accessToken) {
     // 如果有token，去不了登录页
-    return '/file/all';
-  }
+    return false;
+  } else if (to.path === '/admin' && !userInfo.value.isAdmin) return false
   return true;
 });
 

@@ -6,5 +6,5 @@ import type { AxiosRequestConfig } from 'axios';
  * @returns
  */
 export function isRefreshTokenConfig(config: AxiosRequestConfig) {
-    return config.url === '/refreshToken';
+    return config.url?.includes('/refreshToken');
 }

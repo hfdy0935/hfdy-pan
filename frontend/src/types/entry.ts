@@ -29,20 +29,9 @@ export interface LoginDTO {
 /**
  * 登录响应体
  */
-export interface LoginVO {
-  userId: string;
-  nickName: string;
+export interface LoginVO extends UserInfoVO {
   accessToken: string;
   refreshToken: string;
-  avatar: string;
-  /**
-   * 已用空间大小，byte
-   */
-  usedSpace: number;
-  /**
-   * 总空间大小，byte
-   */
-  totalSpace: number;
 }
 
 /**
@@ -70,3 +59,33 @@ export interface RegisterDTO extends UpdatePasswordDTO {
  * 注册的响应
  */
 export type RegisterVO = LoginVO;
+
+
+/**
+ * 获取用户信息响应体
+ */
+export interface UserInfoVO {
+  userId: string
+  nickName: string
+  avatar: string
+  /**
+   * 已用空间大小，byte
+   */
+  usedSpace: number
+  /**
+   * 总空间大小，byte
+   */
+  totalSpace: number
+  /**
+   * 是不是vip
+   */
+  isVip: 1 | 0
+  /**
+   * 文件夹最大深度
+   */
+  maxFolderLevel: number
+  /**
+   * isAdmin
+   */
+  isAdmin: number
+}

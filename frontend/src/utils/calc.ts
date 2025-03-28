@@ -14,25 +14,22 @@ export function calcFileSize(size_: number | string): string {
     size /= 1024;
   }
 
-  // If the size is less than 1 but we're not at bytes, adjust back.
   if (size < 1 && unitIndex > 0) {
     size *= 1024;
     unitIndex--;
   }
 
-  // Round to one decimal place for KB and above, keep exact value for bytes.
   const roundedSize = unitIndex === 0 ? size : parseFloat(size.toFixed(1));
 
-  return `${roundedSize} ${units[unitIndex]}`;
+  return `${roundedSize}${units[unitIndex]}`;
 }
 
 
 /**
- * 获取不重复的文件夹名
+ * 新建文件夹时获取不重复的文件夹名
  * @param nameList
  */
 export function calcUniqueFilename(nameList: string[]): string {
-  console.log(nameList);
   const prefix = '新建文件夹';
   let start = 1;
   while (nameList.includes(prefix + start)) {

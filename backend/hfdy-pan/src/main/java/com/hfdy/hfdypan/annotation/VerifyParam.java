@@ -24,7 +24,7 @@ public @interface VerifyParam {
     int min() default -1;
 
     /**
-     * 最大值s
+     * 最大值
      *
      * @return
      */

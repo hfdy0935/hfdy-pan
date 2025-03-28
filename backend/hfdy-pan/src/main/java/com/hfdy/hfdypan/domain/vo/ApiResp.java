@@ -1,6 +1,7 @@
 package com.hfdy.hfdypan.domain.vo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.google.protobuf.Api;
 import com.hfdy.hfdypan.domain.enums.HttpCodeEnum;
 import lombok.Data;
 
@@ -39,9 +40,6 @@ public class ApiResp<T> implements Serializable {
         return new ApiResp<>(code, message);
     }
 
-    public static ApiResp<Void> fail(HttpCodeEnum httpCodeEnum) {
-        return ApiResp.fail(httpCodeEnum.getCode(), httpCodeEnum.getMessage());
-    }
 
     public static ApiResp<Void> success() {
         return ApiResp.success(HttpCodeEnum.SUCCESS);

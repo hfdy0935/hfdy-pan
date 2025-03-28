@@ -13,13 +13,16 @@
     0% {
         opacity: 100%;
     }
+
     100% {
         opacity: 0;
     }
 }
+
 .v-enter-active {
     animation: kf 0.3s ease reverse;
 }
+
 .v-leave-active {
     animation: kf 0.3s ease;
 }

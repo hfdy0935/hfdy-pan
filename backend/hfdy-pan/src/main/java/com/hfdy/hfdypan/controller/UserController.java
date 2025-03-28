@@ -5,21 +5,27 @@ import com.hfdy.hfdypan.annotation.VerifyParam;
 import com.hfdy.hfdypan.annotation.VerifyParamMethod;
 import com.hfdy.hfdypan.constants.RedisConstants;
 import com.hfdy.hfdypan.domain.dto.user.*;
+import com.hfdy.hfdypan.domain.entity.User;
 import com.hfdy.hfdypan.domain.vo.ApiResp;
 import com.hfdy.hfdypan.domain.vo.user.LoginVO;
 import com.hfdy.hfdypan.domain.vo.user.RegisterVO;
 import com.hfdy.hfdypan.domain.vo.user.UpdateUserInfoVO;
 import com.hfdy.hfdypan.domain.enums.HttpCodeEnum;
+import com.hfdy.hfdypan.domain.vo.user.UserInfoVO;
 import com.hfdy.hfdypan.exception.BusinessException;
+import com.hfdy.hfdypan.mapper.UserMapper;
 import com.hfdy.hfdypan.service.EmailService;
+import com.hfdy.hfdypan.service.ResourceService;
 import com.hfdy.hfdypan.service.UserService;
 import com.hfdy.hfdypan.utils.CaptchaUtil;
 import com.hfdy.hfdypan.utils.RedisUtil;
+import com.hfdy.hfdypan.utils.ThreadLocalUtil;
 import com.hfdy.hfdypan.utils.ThrowUtil;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -40,6 +46,10 @@ public class UserController {
     private UserService userService;
     @Resource
     private RedisUtil<String> strRedisUtil;
+    @Resource
+    private UserMapper userMapper;
+    @Resource
+    private ResourceService resourceService;
 
     /**
      * 获取邮箱验证码过期时间
@@ -50,7 +60,6 @@ public class UserController {
     public ApiResp<Long> getEmailCheckCodeExpire(HttpSession session) {
         String key = RedisConstants.EMAIL_CHECK_CODE_KEY + ":" + session.getId();
         Long expires = strRedisUtil.getExpire(key);
-        System.out.println(expires);
         // 没查到返回-1
         return ApiResp.success(expires == null ? -1 : expires);
     }
@@ -63,7 +72,7 @@ public class UserController {
      */
     private void verifyEmailCheckCode(String key, String code) {
         String emailCacheCheckCode = strRedisUtil.get(key);
-        ThrowUtil.throwIf(emailCacheCheckCode == null || !emailCacheCheckCode.equals(code), new BusinessException(HttpCodeEnum.EMAIL_CODE_ERROR));
+        ThrowUtil.throwIf(emailCacheCheckCode == null || !emailCacheCheckCode.equals(code), new BusinessException(HttpCodeEnum.EMAIL_CODE_WRONG));
     }
 
     /**
@@ -90,7 +99,7 @@ public class UserController {
         ThrowUtil.throwIf(expires > 0, HttpCodeEnum.CAPTCHA_WAITING);
         log.info("发送验证码：{}", session.getId());
         String code = emailService.sendEmailCode(dto);
-        strRedisUtil.set(key, code, RedisConstants.EMAIL_EXP_TIME);
+        strRedisUtil.set(key, code, RedisConstants.EMAIL_CHECK_CODE_EXPIRE);
         return ApiResp.success();
     }
 
@@ -102,7 +111,7 @@ public class UserController {
      * @throws IOException
      */
     @GetMapping("/captcha")
-    public void genCaptcha(HttpServletResponse response, HttpSession session) throws IOException {
+    public void getCaptcha(HttpServletResponse response, HttpSession session) throws IOException {
         CaptchaUtil captcha = new CaptchaUtil(130, 38, 4, 10);
         response.setHeader("Pragma", "no-cache");
         response.setHeader("Cache-Control", "no-cache");
@@ -112,7 +121,7 @@ public class UserController {
         String code = captcha.getCode();
         // 设置缓存
         String key = RedisConstants.CAPTCHA_KEY + ":" + session.getId();
-        strRedisUtil.set(key, code, RedisConstants.CAPTCHA_EXI_TIME);
+        strRedisUtil.set(key, code, RedisConstants.CAPTCHA_EXPIRE);
         captcha.write(response.getOutputStream());
     }
 
@@ -151,9 +160,7 @@ public class UserController {
      */
     @PostMapping("/login")
     @VerifyParamMethod(checkParams = true)
-    public ApiResp<LoginVO> login(
-            HttpSession session,
-            @RequestBody @VerifyParam(required = true) LoginDTO dto
+    public ApiResp<LoginVO> login(HttpSession session, @RequestBody @VerifyParam(required = true) LoginDTO dto
     ) {
         // 验证图形验证码
         String key = RedisConstants.CAPTCHA_KEY + ":" + session.getId();
@@ -195,7 +202,7 @@ public class UserController {
      */
     @PostMapping("/updateUserInfo")
     @VerifyParamMethod(checkParams = true)
-    public ApiResp<UpdateUserInfoVO> updateUserInfo(@RequestParam("nickname") @VerifyParam(required = true, min = 1) String nickname, MultipartFile avatar) {
+    public ApiResp<UpdateUserInfoVO> updateUserInfo(@RequestParam("nickname") @VerifyParam(required = true) String nickname, MultipartFile avatar) {
         return ApiResp.success(userService.updateUserInfo(nickname, avatar));
     }
 
@@ -210,5 +217,22 @@ public class UserController {
     public ApiResp<Void> updateHomePassword(@RequestBody @VerifyParam(required = true) UpdateHomePasswordDTO dto) {
         userService.updateHomePassword(dto);
         return ApiResp.success();
+    }
+
+    /**
+     * 获取用户信息
+     *
+     * @return
+     */
+    @GetMapping("/userInfo")
+    public ApiResp<UserInfoVO> getUserInfo() {
+        String userId = ThreadLocalUtil.getCurrentUserId();
+        User user = userMapper.selectById(userId);
+        String avatarPath = user.getAvatar().isEmpty() ? "" : resourceService.addPrefix(user.getAvatar());
+        UserInfoVO userInfoVO = new UserInfoVO();
+        BeanUtils.copyProperties(user, userInfoVO);
+        userInfoVO.setUserId(userId);
+        userInfoVO.setAvatar(avatarPath);
+        return ApiResp.success(userInfoVO);
     }
 }

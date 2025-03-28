@@ -1,12 +1,13 @@
 import { reqRefreshToken } from '@/api/entry';
-import { useUserStore } from '@/stores';
 import type { CommonResponse } from '@/types/common';
 import axios, { AxiosHeaders } from 'axios';
 import { isRefreshTokenConfig } from './is';
+import { Message } from '@arco-design/web-vue';
+import { useUserStore } from '@/stores/modules/user';
 
 const request = axios.create({
-  baseURL: '/api',
-  timeout: 5000
+  baseURL: import.meta.env.VITE_BACKEND_BASE_URL,
+  // timeout: 5000,
 });
 
 request.interceptors.request.use(config => {
@@ -18,33 +19,31 @@ request.interceptors.request.use(config => {
 
 request.interceptors.response.use(
   async res => {
+    const { userInfo } = storeToRefs(useUserStore());
+    const { clear } = useUserStore();
     if (res.data.code === 401) {
-      const { userInfo } = storeToRefs(useUserStore());
-      const { clear } = useUserStore();
-      // 如果是refreshToken失效
-      console.log(res.config.url);
-
+      // refreshToken过期
       if (isRefreshTokenConfig(res.config)) {
         clear();
-        useRouter().push('/entry');
+        Message.warning('登录已过期')
+        setTimeout(() => window.open('/entry', '_self'), 1000)
       } else {
-        // accessToken失效，刷新
+        // accessToken过期
         userInfo.value.accessToken = '';
-        try {
-          const refreshRes = await reqRefreshToken();
-          if (refreshRes.data.code === 200) {
-            const newAccessToken = (refreshRes.headers as AxiosHeaders).get('Authorization') as string;
-            userInfo.value.accessToken = newAccessToken;
-            // 再继续发之前的请求
-            const res1 = await request<unknown, CommonResponse<unknown>>(res.config);
-            if (res1.code === 200) return res1.data;
-          }
-        } catch {
-          // refreshToken也过期了
-          clear();
-          useRouter().push('/entry');
+        const refreshRes = await reqRefreshToken();
+        if (refreshRes.data.code === 200) {
+          const newAccessToken = (refreshRes.headers as AxiosHeaders).get('Authorization') as string;
+          userInfo.value.accessToken = newAccessToken;
+          // 再继续发之前的请求
+          const res1 = await request<unknown, CommonResponse<unknown>>(res.config);
+          if (res1.code === 200) return res1.data;
         }
       }
+    }
+    else if (res.data.code === 402) {
+      clear()
+      Message.error('你已被封禁')
+      setTimeout(() => window.open('/entry', '_self'), 1000)
     }
     if (isRefreshTokenConfig(res.config)) return res;
     return res.data;

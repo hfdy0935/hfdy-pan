@@ -3,6 +3,7 @@ package com.hfdy.hfdypan.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hfdy.hfdypan.domain.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * @author hf-dy
@@ -10,4 +11,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
+
+
 }

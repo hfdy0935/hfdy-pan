@@ -26,7 +26,9 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/api/login", "/api/register", "/api/sendEmailCheckCode", "/api/captcha", "/api/updatePassword", "/api/emailCheckCodeExpires", "/api/resource/*");
+                .excludePathPatterns("/api/login", "/api/register", "/api/sendEmailCheckCode",
+                        "/api/captcha", "/api/updatePassword", "/api/emailCheckCodeExpires",
+                        "/api/resource/**");
     }
 
     /**
@@ -39,5 +41,4 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/static/**")
                 .addResourceLocations("classpath:/static/");
     }
-
 }

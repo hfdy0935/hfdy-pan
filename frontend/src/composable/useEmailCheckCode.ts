@@ -3,13 +3,7 @@ import { Form, Message } from '@arco-design/web-vue';
 import type { Ref } from 'vue';
 import { EMAIL_EXP_TIME } from '@/constants';
 
-export default function useEmailCheckCode(): {
-  restSeconds: Ref<number>,
-  getEmailCheckCode(email: string, type: 0 | 1): void,
-  formRef: Ref<InstanceType<typeof Form> | null>,
-  showEmailBtn: Ref<boolean>,
-  isSending: Ref<boolean>
-} {
+export default function useEmailCheckCode() {
   const formRef = ref<InstanceType<typeof Form> | null>(null); // 表单ref
   const restSeconds = ref<number>(-1); // 邮箱验证码剩余秒
   const showEmailBtn = ref(false); // 是否显示发送邮件的按钮，在获取到剩余时间之前应该保持为false
@@ -75,5 +69,5 @@ export default function useEmailCheckCode(): {
       isSending.value = false;
     }
   };
-  return { restSeconds, getEmailCheckCode, formRef, showEmailBtn, isSending };
+  return { restSeconds: restSeconds as Ref<number>, formRef: formRef as Ref<InstanceType<typeof Form> | null>, getEmailCheckCode, showEmailBtn: showEmailBtn as Ref<boolean>, isSending: isSending as Ref<boolean> };
 }

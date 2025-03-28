@@ -4,19 +4,22 @@ import lombok.Getter;
 
 /**
  * @author hf-dy
- * @date 2025/1/17 23:57
- * @description 文件状态
+ * @date 2025/3/5 10:20
  */
-
 @Getter
 public enum FileStatusEnum {
-    ING(0), // 正在转码
-    FAIL(1), //转码失败
-    OK(2); //转码成功
+    // 无需转码
+    NO_NEED_TRANS(0),
+    // 转码中
+    TRANS_ING(1),
+    // 转码成功
+    TRANS_OK(2),
+    // 转码失败
+    TRANS_FAIL(3);
 
-    private final Integer status;
+    public final Integer value;
 
-    FileStatusEnum(Integer status) {
-        this.status = status;
+    FileStatusEnum(Integer value) {
+        this.value = value;
     }
 }

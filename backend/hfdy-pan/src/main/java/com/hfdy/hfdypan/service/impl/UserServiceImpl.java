@@ -11,6 +11,7 @@ import com.hfdy.hfdypan.domain.dto.user.UpdateHomePasswordDTO;
 import com.hfdy.hfdypan.domain.dto.user.LoginDTO;
 import com.hfdy.hfdypan.domain.dto.user.RegisterDTO;
 import com.hfdy.hfdypan.domain.dto.user.UpdatePasswordDTO;
+import com.hfdy.hfdypan.domain.entity.File;
 import com.hfdy.hfdypan.domain.entity.User;
 import com.hfdy.hfdypan.domain.vo.user.LoginVO;
 import com.hfdy.hfdypan.domain.vo.user.RegisterVO;
@@ -18,7 +19,9 @@ import com.hfdy.hfdypan.domain.vo.user.UpdateUserInfoVO;
 import com.hfdy.hfdypan.domain.enums.HttpCodeEnum;
 import com.hfdy.hfdypan.domain.enums.UserStatusEnum;
 import com.hfdy.hfdypan.exception.BusinessException;
+import com.hfdy.hfdypan.mapper.FileMapper;
 import com.hfdy.hfdypan.mapper.UserMapper;
+import com.hfdy.hfdypan.service.ResourceService;
 import com.hfdy.hfdypan.service.UserService;
 import com.hfdy.hfdypan.utils.*;
 import jakarta.annotation.Resource;
@@ -28,6 +31,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -40,21 +44,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Resource
     private UserMapper userMapper;
     @Resource
+    private FileMapper fileMapper;
+    @Resource
     private RedisUtil<Long> longRedisUtil;
     @Resource
     private MinIOUtil minIOUtil;
-    @Value("${server.port}")
-    private Integer port;
+    @Resource
+    private ResourceService resourceService;
 
-    /**
-     * 给avatar添加前缀，变成能访问的url
-     *
-     * @param filename
-     * @return
-     */
-    private String addPrefixToAvatar(String filename) {
-        return "http://localhost:" + port + "/api/resource/" + filename;
-    }
 
     @Override
     public RegisterVO register(RegisterDTO dto) {
@@ -73,7 +70,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 .build();
         userMapper.insert(user);
         // 2. 修改redis中用户云盘可用空间缓存为注册时默认空间
-        longRedisUtil.set(RedisConstants.USER_REST_SPACE_KEY + ":" + user.getId(), UserConstants.USER_DEFAULT_SPACE_SIZE);
+        longRedisUtil.set(RedisConstants.USER_REST_SPACE_KEY + ":" + user.getId(), user.getTotalSpace());
         // 3. 生成token
         Map<String, Object> map = Map.of(JwtConstants.CLAIMS_KEY, user.getId());
         String accessToken = JwtUtil.createAccessToken(map);
@@ -86,7 +83,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         registerVO.setAccessToken(accessToken);
         registerVO.setRefreshToken(refreshToken);
         // 头像加上host等前缀
-        registerVO.setAvatar(addPrefixToAvatar(registerVO.getAvatar()));
+        registerVO.setAvatar(registerVO.getAvatar().isEmpty() ? "" : resourceService.addPrefix(registerVO.getAvatar()));
         return registerVO;
     }
 
@@ -125,10 +122,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         // 6. 返回
         LoginVO loginVO = new LoginVO();
         BeanUtils.copyProperties(user, loginVO);
+        loginVO.setUserId(user.getId());
         loginVO.setAccessToken(accessToken);
         loginVO.setRefreshToken(refreshToken);
+        loginVO.setIsVip(user.getIsVip());
+        loginVO.setIsAdmin(user.getIsAdmin());
         // 头像加上host等前缀
-        loginVO.setAvatar(addPrefixToAvatar(loginVO.getAvatar()));
+        loginVO.setAvatar(loginVO.getAvatar().isEmpty() ? "" : resourceService.addPrefix(loginVO.getAvatar()));
         return loginVO;
     }
 
@@ -151,14 +151,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public UpdateUserInfoVO updateUserInfo(String nickname, MultipartFile avatar) {
         User user = getById(ThreadLocalUtil.getCurrentUserId());
         // 在Minio中的路径
-        String filename = avatar == null ? user.getAvatar() : minIOUtil.uploadFile(avatar);
+        String filename = avatar == null ? user.getAvatar() : minIOUtil.uploadFile(avatar, "avatar" + "/" + StringUtil.getRandomUUid() + " _ " + avatar.getOriginalFilename());
+        // 如果原来有头像，且上传了新的，删除原来的头像
+        if (!user.getAvatar().isEmpty() && !filename.equals(user.getAvatar())) {
+            try {
+                minIOUtil.deleteFiles(user.getAvatar());
+            } catch (Exception e) {
+                throw new BusinessException(HttpCodeEnum.FILE_UPLOAD_ERROR, "修改失败");
+            }
+        }
         // 更新数据库
         LambdaUpdateWrapper<User> userInfoLambdaQueryWrapper = Wrappers.<User>lambdaUpdate().
                 eq(User::getId, user.getId())
                 .set(User::getNickName, nickname)
                 .set(avatar != null, User::getAvatar, filename);
         userMapper.update(userInfoLambdaQueryWrapper);
-        return UpdateUserInfoVO.builder().nickname(nickname).avatar(addPrefixToAvatar(filename)).build();
+        String avatarUrl = filename.isEmpty() ? "" : resourceService.addPrefix(filename);
+        return UpdateUserInfoVO.builder().nickname(nickname).avatar(avatarUrl).build();
     }
 
     @Override
@@ -171,5 +180,20 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 .eq(User::getId, userId)
                 .set(User::getPassword, StringUtil.encodeByMd5(dto.getNewPassword()));
         userMapper.update(userInfoLambdaUpdateWrapper);
+    }
+
+    @Override
+    public void updateUserUsedSpace() {
+        String userId = ThreadLocalUtil.getCurrentUserId();
+        LambdaQueryWrapper<File> fileLambdaQueryWrapper = Wrappers.<File>lambdaQuery()
+                .eq(File::getUserId, userId);
+        List<File> files = fileMapper.selectList(fileLambdaQueryWrapper);
+        long usedSpace = 0L;
+        for (File file : files) {
+            Long size = file.getSize();
+            usedSpace += size == null ? 0 : size;
+        }
+        lambdaUpdate().eq(User::getId, userId)
+                .set(User::getUsedSpace, usedSpace).update();
     }
 }

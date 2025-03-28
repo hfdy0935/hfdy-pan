@@ -29,7 +29,12 @@ public class UserConstants {
 
 
     /**
-     * 默认头像路径
+     * 默认头像在minio中的路径
      */
-    public static final String DEFAULT_AVATAR = "/api/static/avatar.png";
+    public static final String DEFAULT_AVATAR = "avatar/avatar.png";
+
+    /**
+     * 默认下载速度，未登录获取分享的文件时，1MB/s
+     */
+    public static final long DEFAULT_DOWNLOAD_SPEED = 1024 * 1024;
 }

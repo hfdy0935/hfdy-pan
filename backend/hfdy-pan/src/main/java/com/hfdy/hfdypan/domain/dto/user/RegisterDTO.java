@@ -26,7 +26,7 @@ public class RegisterDTO {
     @VerifyParam(required = true)
     private String captcha;
     // 用户昵称
-    @VerifyParam(required = true, min = 1)
+    @VerifyParam(required = true, min = 1, max = 20)
     private String nickname;
     // 邮箱验证码
     @VerifyParam(required = true)
