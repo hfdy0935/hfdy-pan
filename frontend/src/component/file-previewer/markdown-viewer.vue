@@ -1,9 +1,9 @@
 <template>
-    <MdPreview :modelValue="content" style="width: 100%;height: 100%;" />
+    <MdPreview :modelValue="content" style="width: 100%;" />
 </template>
 
 <script setup lang="ts">
-import { useViewFileStore } from '@/stores/modules/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 import { MdPreview } from 'md-editor-v3';
 import 'md-editor-v3/lib/preview.css';
 

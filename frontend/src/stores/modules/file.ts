@@ -1,15 +1,13 @@
 import {
-    type IItemCategory,
     type FileDetailVO,
     type ItemListDTO,
     type ItemListVO,
     type IFileItem,
     type MoveItemDTO,
     TransCodeStatusEnum,
-    type IItemMediaType,
     type ITreeData,
 } from '@/types/file';
-import { reqDeleteFile, reqFileList, reqMoveItem, reqPreviewFile, reqCreateFolder, reqRenameItem } from '@/api/file';
+import { reqDeleteFile, reqFileList, reqMoveItem,  reqCreateFolder, reqRenameItem } from '@/api/file';
 import { Message, type FileItem } from '@arco-design/web-vue';
 import { OrderType } from '@/enums';
 import { calcCurrentDatetime, calcUniqueFileId, calcUniqueFilename } from '@/utils/calc';
@@ -18,17 +16,7 @@ import { useBreadcrumb } from '@/composable/useBreadcrumb';
 import { useTable } from '@/composable/useTable';
 import { findNodeById, removeNodeByIds, useFolderLevelTree } from '@/composable/useFolderLevelTree';
 import type { UnwrapRef } from 'vue';
-import { calcFileLevel, isFile, isFolder, isVideo } from '@/utils/file';
-import AudioViewer from '@/component/file-previewer/audio-viewer.vue';
-import VideoViewer from '@/component/file-previewer/video-viewer.vue';
-import ExcelViewer from '@/component/file-previewer/excel-viewer.vue';
-import ImageViewer from '@/component/file-previewer/image-viewer.vue';
-import PdfViewer from '@/component/file-previewer/pdf-viewer.vue';
-import PptViewer from '@/component/file-previewer/ppt-viewer.vue';
-import WordViewer from '@/component/file-previewer/word-viewer.vue';
-import type { Component } from 'vue';
-import CodeViewer from '@/component/file-previewer/code-viewer.vue';
-import UnknownViewer from '@/component/file-previewer/unknown-viewer.vue';
+import { calcFileLevel, isFile, isFolder } from '@/utils/file';
 import { useUserStore } from './user';
 import { useAppStore } from './app';
 
@@ -546,122 +534,3 @@ export const useFileDetailStore = defineStore('fileDetailStore', () => {
     };
     return { detail, isDetailModalShow, openDetailModal };
 });
-
-export const useViewFileStore = defineStore('viewFileStore', () => {
-    const isModalShow = ref(false);
-    // 当前预览的文件
-    const file = ref<IFileItem | null>(null);
-    const data = ref<Blob | null>(null);
-    // 要显示的文件类型
-    const mediaType = ref<IItemMediaType>('text');
-    const spinning = ref(false);
-    const route = useRoute();
-    let control = new AbortController();
-    const refreshControl = () => {
-        control.abort()
-        control = new AbortController()
-    }
-    watch(isModalShow, (newValue, oldValue) => {
-        if (oldValue && !newValue) {
-            refreshControl()
-        }
-    });
-
-    const getData = async () => {
-        if (!file.value) return;
-        // 视频未转码警告
-        if (isVideo(file.value) && file.value.status !== TransCodeStatusEnum.OK) {
-            Message.warning('视频未转码，传输速度和质量会受影响，转码后食用更佳');
-        }
-        // 如果是unknown、zip类型的数据，先不请求，等确认以text打开了再请求
-        if (['unknown', 'zip'].includes(file.value.mediaType)) return;
-        spinning.value = true;
-        try {
-            data.value = null;
-            // 考虑到打开分享页面，也需要验证文件是不是该分享下的，携带路径参数shareId
-            const resp = await reqPreviewFile(file.value.id, control, route.params.shareId as string);
-            data.value = resp;
-        } catch (e: any) {
-            e.message !== 'canceled' && Message.error('获取文件信息失败');
-        } finally {
-            spinning.value = false;
-        }
-    };
-
-    const openPreviewModal = async (item: IFileItem) => {
-        file.value = item;
-        // 先开对话框，显示加载中
-        isModalShow.value = true;
-        await getData();
-    };
-    const modalType: Partial<Record<IItemMediaType, {
-        component: Component,
-        needFullscreen: boolean
-    }>> = {
-        video: {
-            component: VideoViewer,
-            needFullscreen: false
-        },
-        audio: {
-            component: AudioViewer,
-            needFullscreen: false
-        },
-        image: {
-            component: ImageViewer,
-            needFullscreen: false
-        },
-        zip: {
-            component: UnknownViewer,
-            needFullscreen: true
-        },
-        text: {
-            component: CodeViewer,
-            needFullscreen: true
-        },
-        ppt: {
-            component: PptViewer,
-            needFullscreen: true
-        },
-        pptx: {
-            component: PptViewer,
-            needFullscreen: true
-        },
-        pdf: {
-            component: PdfViewer,
-            needFullscreen: true
-        },
-        xlsx: {
-            component: ExcelViewer,
-            needFullscreen: true
-        },
-        csv: {
-            component: CodeViewer,
-            needFullscreen: true
-        },
-        doc: {
-            component: WordViewer,
-            needFullscreen: true
-        },
-        docx: {
-            component: WordViewer,
-            needFullscreen: true
-        },
-        code: {
-            component: CodeViewer,
-            needFullscreen: true
-        },
-        md: {
-            component: CodeViewer,
-            needFullscreen: true
-        },
-        unknown: {
-            component: UnknownViewer,
-            needFullscreen: true
-        }
-    }
-    const currentItem = computed(() => modalType[file.value?.mediaType ?? 'unknown'])
-
-    return { isModalShow, file, spinning, openPreviewModal, data, getData, mediaType, refreshControl, currentItem };
-});
-
-

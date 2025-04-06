@@ -1,0 +1,1 @@
+const a=s=>(s==null?void 0:s.mediaType)!=="folder",c=s=>!a(s),l=s=>(s==null?void 0:s.category)==="video",d=s=>(s==null?void 0:s.category)==="audio",n=s=>(s==null?void 0:s.category)==="image",g=s=>{var o;return((o=s==null?void 0:s.level)==null?void 0:o.split("/").length)??0};export{c as a,a as b,g as c,d,n as e,l as i};

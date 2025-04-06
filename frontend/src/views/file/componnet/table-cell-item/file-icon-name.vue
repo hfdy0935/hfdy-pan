@@ -26,7 +26,7 @@ import { reqPreviewFile, reqTransVideoCode } from '@/api/file'
 import { useEditFileName } from '@/composable/useEditFileName'
 import { HBlue } from '@/constants'
 import { getIconByFilename } from '@/constants/fileIcon'
-import { useBaseFileStore, useFileItemStore, useViewFileStore } from '@/stores/modules/file'
+import { useBaseFileStore, useFileItemStore } from '@/stores/modules/file'
 import { useUserStore } from '@/stores/modules/user';
 import { useAppStore } from '@/stores/modules/app';
 import type { Callback } from '@/stores/modules/file'
@@ -35,6 +35,7 @@ import { calcFileLevel, isFolder, isImage } from '@/utils/file'
 import { Input, Message } from '@arco-design/web-vue'
 import { IconCheck, IconClockCircle, IconClose, IconMinus } from '@arco-design/web-vue/es/icon'
 import type { CSSProperties } from 'vue'
+import { useViewFileStore } from '@/stores/modules/viewFile'
 
 // 文件状态图标
 interface Status {

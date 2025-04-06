@@ -5,7 +5,7 @@
 <script setup lang="ts">
 // @ts-ignore
 import VueOfficePpt from '@vue-office/pptx/lib/v3/vue-office-pptx.mjs'
-import { useViewFileStore } from '@/stores/modules/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 
 const { data } = storeToRefs(useViewFileStore())
 const src = ref('')

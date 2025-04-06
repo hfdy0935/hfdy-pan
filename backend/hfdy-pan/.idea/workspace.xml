@@ -5,179 +5,89 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41eaac0d-0529-4ea1-b5d6-cd0b0757392d" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/annotation/NeedAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/annotation/UploadSpeedLimit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/aspect/NeedAdminAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/aspect/UploadSpeedLimitAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/FileConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/MinIOConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/PublicShareController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/RecycleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/ShareController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/TransferFileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/UploadFileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/DeleteChunksDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/DeleteItemDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/DownloadFileDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/GetFileStatusDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/InstantUploadDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/MoveItemDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/RecoverRecycleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/SaveShareToMyPanDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/ShareFileDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/UpdateMyShareFilesDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/UpdateMyShareOptionsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/UploadFileChunkDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/user/UpdateUserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/Share.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/ShareFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetFileStatusVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetFolderLevelInfoVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetMyShareVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetRecycleVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetShareFileVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/GetUploadedChunkIndexesVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/ShareFileVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/user/UserInfoVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/user/UserListVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/ShareFileMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/ShareMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/RecycleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/ResourceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/TransferFileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/UploadFileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/CommonFileServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/RecycleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/ResourceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/TransFileServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/UploadFileServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/task/ClearExpiredShare.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/FfmpegUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/FileReqRespUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/FileUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/src/api/recycle.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/src/composable/useFolderLevelTree.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/src/composable/useTable.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/src/types/recycle.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../frontend/src/views/recycle/table-cell.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/annotation/VerifyParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/annotation/VerifyParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/config/WebMvcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/config/WebMvcConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/JwtConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/JwtConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/RedisConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/RedisConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/UserConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/constants/UserConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/CommonFileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/ResourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/bo/QueryFileBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/bo/QueryFileListBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/CreateFolderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/CreateFolderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/QueryFileListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/QueryItemListDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/RenameFileDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/file/RenameItemDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/user/RegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/dto/user/RegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/File.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/TransferFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/controller/file/TransferFileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/HttpCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/HttpCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/file/FileMediaTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/file/FileMediaTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/file/FileStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/enums/file/FileStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/ApiResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/ApiResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/FileDetailVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/ItemDetailVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/QueryFileListVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/file/QueryItemListVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/user/LoginVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/domain/vo/user/LoginVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/exception/BusinessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/interceptor/JwtInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/interceptor/JwtInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/FileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/FileMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/CommonFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/EmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/FileServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/MinIOUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/MinIOUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/RedisUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/utils/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sql/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/.env.development" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/.eslintrc-auto-import.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/.eslintrc-auto-import.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/auto-imports.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/auto-imports.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/components.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/api/entry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/api/entry.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/api/file.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/api/file.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/clean.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/code.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/del.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/excel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/exe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/file.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/folder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/music.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/no_data.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/others.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/pdf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/ppt1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/txt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/upload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/video.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/word.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon-image/zip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/demo_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/assets/icon/iconfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/composable/useEditFileName.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/composable/useEditFileName.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/composable/useEmailCheckCode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/composable/useEmailCheckCode.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/constants/fileIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/constants/fileIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/constants/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/constants/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/constants/menuData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/constants/menuData.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/layout/component/Content.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/layout/component/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/layout/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/routes/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/stores/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/stores/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/stores/modules/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/stores/modules/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hfdy/hfdypan/controller/file/TransferFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hfdy/hfdypan/controller/file/TransferFileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hfdy/hfdypan/domain/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hfdy/hfdypan/domain/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sql/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sql/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hfdy-pan-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/hfdy-pan-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hfdy-pan-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/hfdy-pan-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hfdy.hfdypan.HfdyPanApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hfdy.hfdypan.HfdyPanApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hfdy.hfdypan.config.MinIOTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hfdy.hfdypan.config.MinIOTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hfdy.hfdypan.HfdyPanApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hfdy.hfdypan.HfdyPanApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hfdy.hfdypan.config.MinIOTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hfdy.hfdypan.config.MinIOTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/file-Bu8a5mjb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/file-C93awfPJ.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-1KASY4po.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-1yibg0MA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-65Il4m2H.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-B1v9C8kk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-B6IloI6w.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-BFwe9jW7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-BRPLRZkw.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-BV772zJi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-BZDiOY4b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-Bemu3YX3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-C0EE-4CF.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-CFKiZ7gP.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-CFxGOiqx.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-CSef94yT.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-CWqBjsaf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-C_7fShQY.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-D629Ry2p.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-D6o2v0Qo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-DAfT05qg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-DMMyicpo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-DV0vrAiY.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-DZsJf65D.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-Dby_OWeB.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-DfCcxtoI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-DiH30XH7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-DirDo6j1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-GenGkzJh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-TEEz0Elb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-TGxRQcnU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-fDEUsWmJ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/index-xuNQlV5u.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/logo.vue_vue_type_script_setup_true_lang-DPWU2qmp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/menuData-B28-nopt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/share-Bj4d4icF.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/useBreadcrumb-DKPyaTjD.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/useFolderLevelTree-CDJ_26ol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/vue-office_docx-BTzFQIdC.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/vue-office_excel-HlhG_4Om.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/vue-office_pdf-1kjn8M9t.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/assets/vue-office_pptx-Ci_UBxwQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/audio-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/audio-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/code-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/code-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/excel-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/excel-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/image-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/image-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/markdown-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/markdown-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/pdf-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/pdf-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/ppt-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/ppt-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/unknown-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/unknown-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/video-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/video-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/word-viewer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/component/file-previewer/word-viewer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/layout/component/header/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/layout/component/header/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/stores/modules/file.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/stores/modules/file.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/stores/modules/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/stores/modules/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/types/entry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/types/entry.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/types/file.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/types/file.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/types/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/types/home.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/utils/calc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/utils/calc.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/utils/is.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/utils/is.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/utils/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/utils/request.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/admin/FileList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/admin/Setting.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/admin/UserList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/entry/component/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/entry/component/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/entry/component/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/entry/component/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/entry/component/UpdatePassword.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/entry/component/UpdatePassword.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/entry/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/entry/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/contextmenu/blank.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/contextmenu/normal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/contextmenu/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-breadcrumb.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-detail.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-operation.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-panigation.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/table-td-item.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/block-layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/block-layout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-view-modal/display-comp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-view-modal/display-comp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-view-modal/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/file-view-modal/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/table-cell-item/contextmenu/normal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/table-cell-item/contextmenu/normal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/table-cell-item/file-icon-name.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/table-cell-item/file-icon-name.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/top-operation/file-breadcrumb.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/top-operation/file-breadcrumb.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/tree-layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/file/componnet/tree-layout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/views/file/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/file/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/recycle/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/recycle/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/share/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/share/get-share-file/bottom-table/context-menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/share/get-share-file/bottom-table/context-menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/views/share/get-share-file/bottom-table/table-cell.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/views/share/get-share-file/bottom-table/table-cell.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/stats.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/stats.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,8 +99,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -223,49 +133,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.resources/dockercompose.dev.yml.mysql: Compose 部署.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.resources/dockercompose.dev.yml: Compose 部署.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.resources/dockercompose.yml.mysql: Compose 部署.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.resources/dockercompose.yml: Compose 部署.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.hfdy-pan [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.hfdy-pan [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.hfdy-pan [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.hfdy-pan [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.hfdy-pan [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;数据库检测器&quot;,
-    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.HfdyPanApplication.executor&quot;: &quot;Run&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Desktop/hfdy-pan/backend/hfdy-pan/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\IntelliJ IDEA 2024.3.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.resources/dockercompose.dev.yml.mysql: Compose 部署.executor": "Run",
+    "Docker.resources/dockercompose.dev.yml: Compose 部署.executor": "Run",
+    "Docker.resources/dockercompose.yml.mysql: Compose 部署.executor": "Run",
+    "Docker.resources/dockercompose.yml: Compose 部署.executor": "Run",
+    "Maven.hfdy-pan [clean].executor": "Run",
+    "Maven.hfdy-pan [compile].executor": "Run",
+    "Maven.hfdy-pan [install].executor": "Run",
+    "Maven.hfdy-pan [package].executor": "Run",
+    "Maven.hfdy-pan [validate].executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Database detector": "数据库检测器",
+    "Notification.DoNotAsk-Database detector": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.HfdyPanApplication.executor": "Run",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "F:/Desktop/hfdy-pan/backend/hfdy-pan/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "ts.external.directory.path": "F:\\IntelliJ IDEA 2024.3.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -451,6 +361,10 @@
       <workItem from="1743128138232" duration="43000" />
       <workItem from="1743128338875" duration="21000" />
       <workItem from="1743128510449" duration="102000" />
+      <workItem from="1743160069038" duration="5660000" />
+      <workItem from="1743907210642" duration="805000" />
+      <workItem from="1743914179527" duration="627000" />
+      <workItem from="1743921272806" duration="468000" />
     </task>
     <servers />
   </component>
@@ -469,6 +383,15 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hfdy/hfdypan/aspect/UploadSpeedLimitAspect.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="io.minio.errors.ErrorResponseException" memberName="cause" />

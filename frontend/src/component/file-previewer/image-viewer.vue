@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { useViewFileStore } from '@/stores/modules/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 
 
 

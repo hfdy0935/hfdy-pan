@@ -6,7 +6,7 @@
 // @ts-ignore
 import VueOfficeDocx from '@vue-office/docx/lib/v3/vue-office-docx.mjs'
 import '@vue-office/docx/lib/v3/index.css'
-import { useViewFileStore } from '@/stores/modules/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 
 const { data } = storeToRefs(useViewFileStore())
 const url = ref('')

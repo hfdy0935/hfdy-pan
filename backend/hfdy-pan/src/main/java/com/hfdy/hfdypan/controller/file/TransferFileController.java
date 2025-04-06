@@ -1,6 +1,7 @@
 package com.hfdy.hfdypan.controller.file;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.hfdy.hfdypan.annotation.UploadSpeedLimit;
 import com.hfdy.hfdypan.constants.RedisConstants;
 import com.hfdy.hfdypan.constants.UserConstants;
 import com.hfdy.hfdypan.domain.dto.file.DownloadFileDTO;
@@ -218,6 +219,7 @@ public class TransferFileController {
      * @param dto
      * @param response
      */
+    @UploadSpeedLimit
     @PostMapping("/download")
     public void downloadFile(@RequestBody @Valid DownloadFileDTO dto, HttpServletResponse response) {
         if (dto.getFileIds().isEmpty()) {

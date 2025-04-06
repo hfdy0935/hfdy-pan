@@ -66,8 +66,7 @@ public class User {
     // 云盘总空间大小，单位为byte
     @TableField("total_space")
     private Long totalSpace;
-
-
+    
     @TableField("is_vip")
     private Integer isVip;
 

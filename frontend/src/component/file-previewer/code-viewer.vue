@@ -23,7 +23,8 @@
             </a-form-item>
         </a-space>
         <MdEditor v-show="isMd && mdShowType === 'md-viewer'" :model-value="code" read-only
-            :toolbars="['catalog', 'previewOnly', 'preview', 'fullscreen']" :theme="mdPreviewTheme" class="h-[94%]" />
+            :toolbars="['catalog', 'previewOnly', 'preview', 'fullscreen']" :theme="mdPreviewTheme"
+            style="height: 94%;" />
         <VueMonacoEditor v-show="!(isMd && mdShowType === 'md-viewer')" v-model:value="code" :options :language
             class="max-h-[94%]" />
     </div>
@@ -31,7 +32,7 @@
 
 <script setup lang="ts">
 import { useAppStore } from '@/stores/modules/app';
-import { useViewFileStore } from '@/stores/modules/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 import { VueMonacoEditor } from '@guolao/vue-monaco-editor';
 import { MdEditor } from 'md-editor-v3';
 import 'md-editor-v3/lib/style.css';

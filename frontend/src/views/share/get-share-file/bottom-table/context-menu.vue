@@ -20,11 +20,11 @@
 
 <script setup lang="ts">
 import { reqDownloadShareFiles } from '@/api/share';
-import { useViewFileStore } from '@/stores/modules/file'
 import { useAppStore } from '@/stores/modules/app';
 import { isFolder } from '@/utils/file';
 import { Message } from '@arco-design/web-vue';
 import { useGetShareStore } from '@/stores/modules/share';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 
 const { shouldHandleGroup, contextItem, selectedIds, treeModalShow, modalPos } = storeToRefs(useGetShareStore());
 const { updateFolder } = useGetShareStore();

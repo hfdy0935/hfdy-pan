@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { adaptedThemeIcons } from '@/constants/fileIcon';
-import { useBaseFileStore, useFileItemStore, useViewFileStore, useFileDetailStore } from '@/stores/modules/file'
+import { useBaseFileStore, useFileItemStore, useFileDetailStore } from '@/stores/modules/file'
 import { useUserStore } from '@/stores/modules/user';
 import { useAppStore } from '@/stores/modules/app';
 import { reqFileDetail, reqDownloadFiles, reqUploadLyric } from '@/api/file';
@@ -8,9 +8,10 @@ import { Message, Upload, type FileItem } from '@arco-design/web-vue';
 import { IconDownload } from '@arco-design/web-vue/es/icon';
 import { isAudio, calcFileLevel } from '@/utils/file';
 import { useSetShareStore } from '@/stores/modules/share';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 
 
-const { isDark, textColor, bgColor, iconColor } = storeToRefs(useAppStore());
+const { isDark } = storeToRefs(useAppStore());
 const { isContextmenuShow, editNameOp, layoutType, editingId, isMaxFolderLevel, currParentFolder } = storeToRefs(useBaseFileStore())
 const { contextmenuItem, contextmenuType, query, selectedFiles, shouldHandleGroup } = storeToRefs(useFileItemStore());
 const { updateFileItem, doDelete: del, doPaste, prepareCreateFolder, prepareCut, prepareCopy, clearSelected } = useFileItemStore();

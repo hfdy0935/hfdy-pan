@@ -30,9 +30,9 @@ create unique index user_email on user (email);
 INSERT INTO `hfdy_pan`.`user` (`id`, `nick_name`, `is_admin`, `email`, `qq_open_id`, `avatar`, `password`,
                                `register_time`, `last_login_time`, `status`, `is_vip`, `used_space`, `total_space`,
                                `upload_limit`, `download_speed`)
-VALUES ('1', '普通用户', 0, '1952620882@qq.com', '', '', '9cbf8a4dcb8e30682b927f352d6559a0', '2025-01-17 23:00:30',
+VALUES ('1', '普通用户', 0, 'email1@qq.com', '', '', '9cbf8a4dcb8e30682b927f352d6559a0', '2025-01-17 23:00:30',
         '2025-01-18 19:27:08', 1, 0, 0, 1073741824, 6, 2097512),
-       ('1880268966581248002', '会飞的鱼', 1, '1952620883@qq.com', '',
+       ('1880268966581248002', '会飞的鱼', 1, 'email2@qq.com', '',
         '', '9cbf8a4dcb8e30682b927f352d6559a0', '2025-01-17 23:00:30',
         '2025-03-26 20:41:39', 1, 1, 8696042, 1073741824, 6, 10485760);
 

@@ -1,8 +1,8 @@
 server:
   port: 8002
   # 和前端请求的接口对应
-  # deploy_address: your_deploy_address
-  deploy_address: http://localhost
+  deploy_address: https://pan.trizw.me
+#  deploy_address: http://localhost
 
 spring:
   jackson:

@@ -1,6 +1,6 @@
 <template>
     <a-row class="h-full">
-        <a-col flex="300px" class="h-full pr-1 overflow-hidden">
+        <a-col flex="300px" class="h-full pr-1 overflow-auto">
             <a-tree :data="filteredTreeData" :fieldNames v-model:selected-keys="treeSelectedIds"
                 v-model:expanded-keys="expandNodeIds" v-model:checked-keys="selectedIds" check-strictly
                 @select="handleSelect" :draggable="!editingId" blockNode checkable @drop="handleDrop">
@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 import { fieldNames, findFatherNodeById } from '@/composable/useFolderLevelTree';
-import { useBaseFileStore, useFileNodeStore ,useViewFileStore} from '@/stores/modules/file'
+import { useBaseFileStore, useFileNodeStore } from '@/stores/modules/file'
 import { useUserStore } from '@/stores/modules/user';
 import { useAppStore } from '@/stores/modules/app';
 import { type TreeNodeData } from '@arco-design/web-vue';
@@ -33,6 +33,7 @@ import { type ITreeData } from '@/types/file';
 import TreeNodeItem from './tree-children/tree-node-item.vue';
 import { isFolder } from '@/utils/file';
 import { calcFileLevel } from '@/utils/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 
 const { userInfo } = storeToRefs(useUserStore())
 const { breadcrumbs, editingId } = storeToRefs(useBaseFileStore())

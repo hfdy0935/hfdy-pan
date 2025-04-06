@@ -77,9 +77,16 @@ export default defineConfig({
                 manualChunks(id: string) {
                     // vue-office拆包前，7.6M
                     // 按照ppt、word、pdf、excel拆包后 0.2M、1.3M、1.7M、2.8M
+                    // 17.48s => 16.41s
                     if (/@vue-office/.test(id)) {
                         const chunkId = /@(vue-office.*?)@/.exec(id)![1]
                         return chunkId
+                    }
+                    if (/arco-vue-icon/.test(id)) {
+                        return 'arco-design-vue-icon'
+                    }
+                    if (/arco-vue/.test(id)) {
+                        return 'arco-design-vue'
                     }
                 }
             }

@@ -1,10 +1,7 @@
 <template>
-    <div class="w-full h-[600px] relative" :style="{ backgroundImage: `url(${musicBg})`, backgroundSize: 'cover' }">
-        <div>
-            <canvas ref="analyze" class="w-full absolute top-[280px] left-0 z-0"></canvas>
-        </div>
-        <div ref="lyric" :key="file?.lyricPath" id="gc"
-            class="flex flex-col items-center w-full h-[540px] overflow-auto">
+    <div class="w-full h-full overflow-hidden relative"
+        :style="{ backgroundImage: `url(${musicBg})`, backgroundSize: 'cover' }">
+        <div ref="lyric" :key="file?.lyricPath" id="gc" class="flex flex-col items-center w-full h-full overflow-auto">
             <div class="order-1 text-[white]" v-for="i in blankRows" :key="i"><br /></div>
         </div>
         <div id="mse" ref="player"></div>
@@ -15,20 +12,19 @@ import Player from 'xgplayer'
 import 'xgplayer/dist/index.min.css'
 import MusicPreset, { Lyric } from 'xgplayer-music';
 import 'xgplayer-music/dist/index.min.css'
-import { useViewFileStore } from '@/stores/modules/file';
 import request from '@/utils/request';
 import musicBg from '@/assets/image/music-bg.png'
+import { useViewFileStore } from '@/stores/modules/viewFile';
 
 const { file, data } = storeToRefs(useViewFileStore())
 
 const playerRef = useTemplateRef<HTMLDivElement>('player')
 const lyricRef = useTemplateRef<HTMLDivElement>('lyric')
-const analyzeRef = useTemplateRef<HTMLCanvasElement>('analyze')
 let audioPlayer: Player | null
 // 歌词后面加的空白行数
 const blankRows = 10
 watch([file, playerRef, data], async () => {
-    if (!data.value || !file.value || !playerRef.value || !lyricRef.value || !analyzeRef.value) return
+    if (!data.value || !file.value || !playerRef.value || !lyricRef.value) return
     const _url = URL.createObjectURL(data.value)
     audioPlayer = new Player({
         el: playerRef.value,
@@ -83,12 +79,6 @@ watch([file, playerRef, data], async () => {
             })
         });
     }
-    // const analyze = new Analyze(audioPlayer, analyzeRef.value, {
-    //     bgColor: 'rgba(0,0,0,0.0)',
-    //     stroke: 3,
-    //     colors: ['rgba(255,0,0,1)', 'rgba(255,165,0,1)', 'rgba(255,255,0,1)', 'rgba(0,255,0,1)', 'rgba(0,0,255,1)', 'rgba(128,0,128,1)']
-    // })
-
 
 })
 onBeforeUnmount(() => {

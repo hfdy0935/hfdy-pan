@@ -3,7 +3,7 @@
         <a-space wrap>
             <div v-for="item in itemList.records" :key="item.id" @contextmenu=" contextmenuItem = item"
                 @dblclick="openFileOrFolder(item)"
-                class="w-24 h-24 m-1 flex flex-col justify-around items-center group truncate cursor-pointer rounded transition-all"
+                class="w-28 h-28 flex flex-col justify-around items-center group truncate cursor-pointer rounded transition-all"
                 :class="`${isItemHover(item.id) ? isDark ? 'bg-[#333]' : 'bg-[#eee]' : ''} ${isDark ? 'hover:bg-[#333]' : 'hover:bg-[#eee]'}`">
                 <file-icon-name :item :icon-style="{ transform: 'scale(1.6)' }"
                     :name-style="{ fontSize: '12px', textAlign: 'center' }" :input-width="100"></file-icon-name>
@@ -11,7 +11,7 @@
                     @change="checkChange(item)"></a-checkbox>
             </div>
         </a-space>
-        <div class="flex justify-end mr-3">
+        <div class="flex justify-end mr-3 mb-3">
             <a-pagination :total="itemList.total" v-model:current="query.page" v-model:page-size="query.pageSize"
                 show-page-size />
         </div>
@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { useBaseFileStore, useFileItemStore, useViewFileStore } from '@/stores/modules/file'
+import { useBaseFileStore, useFileItemStore } from '@/stores/modules/file'
 import { useUserStore } from '@/stores/modules/user';
 import { useAppStore } from '@/stores/modules/app';
 import FileIconName from './table-cell-item/file-icon-name.vue';
@@ -29,6 +29,7 @@ import NormalFileContextmenu from './table-cell-item/contextmenu/normal.vue';
 import BlankFileContextmenu from './table-cell-item/contextmenu/blank.vue';
 import { Message } from '@arco-design/web-vue';
 import { calcFileLevel, isFolder } from '@/utils/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 
 
 const { currParentFolder } = storeToRefs(useBaseFileStore())

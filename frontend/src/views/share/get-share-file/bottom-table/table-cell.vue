@@ -30,7 +30,7 @@ import type { IFileItem } from '@/types/file';
 import { calcFileSize } from '@/utils/calc';
 import type { TableColumnData, TableData } from '@arco-design/web-vue';
 import ContextMenu from './context-menu.vue';
-import { useViewFileStore } from '@/stores/modules/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 import { reqPreviewFile } from '@/api/file';
 import { useGetShareStore } from '@/stores/modules/share'
 import { useAppStore } from '@/stores/modules/app';

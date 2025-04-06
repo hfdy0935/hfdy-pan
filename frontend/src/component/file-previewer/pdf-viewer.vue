@@ -4,7 +4,7 @@
 <script setup lang="ts">
 // @ts-ignore
 import VueOfficePdf from '@vue-office/pdf/lib/v3/vue-office-pdf.mjs'
-import { useViewFileStore } from '@/stores/modules/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 
 const { data } = storeToRefs(useViewFileStore())
 const url = ref('')

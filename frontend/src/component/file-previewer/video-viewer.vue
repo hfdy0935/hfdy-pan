@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { useUserStore } from '@/stores/modules/user'
-import { useViewFileStore } from '@/stores/modules/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 import Hls from 'hls.js'
 
 const { data } = storeToRefs(useViewFileStore())

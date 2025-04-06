@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import { TransCodeStatusEnum, type TableFileList } from '@/types/file';
+import { TransCodeStatusEnum } from '@/types/file';
 import FileOperation from './componnet/top-operation/file-operation.vue';
-import { useBaseFileStore, useFileItemStore,  } from '@/stores/modules/file'
+import { useBaseFileStore, useFileItemStore, } from '@/stores/modules/file'
 import { useAppStore } from '@/stores/modules/app';
 import FileBreadcrumb from './componnet/top-operation/file-breadcrumb.vue';
 import FileViewModal from './componnet/file-view-modal/index.vue';
 import FileDetailModal from './componnet/table-cell-item/contextmenu/file-detail-modal.vue';
 import { reqFileStatus } from '@/api/file';
 import FileShareModal from './componnet/table-cell-item/contextmenu/file-share-modal.vue';
-import GridLayout from './componnet/block-layout.vue';
-import ListLayout from './componnet/list-layout.vue';
-import TreeLayout from './componnet/tree-layout.vue';
 import { isVideo } from '@/utils/file';
+import type { Component, UnwrapRef } from 'vue';
 
 
 const { textColor, bgColor } = storeToRefs(useAppStore());
@@ -27,19 +25,6 @@ onBeforeRouteUpdate(to => {
     // if (/\/file\//.test(to.fullPath)) 
     query.value.page = 1;
 });
-
-/**
- * 要显示的文件列表，在请求数据的基础上提取列表、增加key字段
- */
-const showedFileList = computed<TableFileList>(
-    () =>
-        itemList.value.records?.map(f => {
-            return {
-                ...f,
-                key: f.id,
-            };
-        }) ?? [],
-);
 /**
  * 轮询转码结果
  */
@@ -78,19 +63,22 @@ onBeforeMount(() => {
     clearInterval(timer);
 });
 
+const LayoutComp: Record<UnwrapRef<typeof layoutType>, Component> = {
+    list: defineAsyncComponent(() => import('./componnet/list-layout.vue')),
+    block: defineAsyncComponent(() => import('./componnet/block-layout.vue')),
+    tree: defineAsyncComponent(() => import('./componnet/tree-layout.vue'))
+}
 </script>
 
 <template>
-    <section class="h-full pl-3 flex flex-col" :style="{ color: textColor, backgroundColor: bgColor }">
+    <section class="h-full pl-2 flex flex-col" :style="{ color: textColor, backgroundColor: bgColor }">
         <div class="pt-3 pr-3">
             <file-operation />
             <file-breadcrumb />
             <a-divider></a-divider>
         </div>
-        <main class="h-[90%] overflow-auto pt-3">
-            <list-layout v-if="layoutType === 'list'" />
-            <grid-layout v-else-if="layoutType === 'block'"></grid-layout>
-            <tree-layout v-else />
+        <main class="h-[90%]  overflow-auto">
+            <component :is="LayoutComp[layoutType]"></component>
         </main>
         <file-view-modal></file-view-modal>
         <file-detail-modal></file-detail-modal>

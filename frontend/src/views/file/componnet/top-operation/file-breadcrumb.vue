@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { findNodeById, getAllNodeIds } from '@/composable/useFolderLevelTree';
-import { useBaseFileStore, useFileItemStore, useFileNodeStore, useViewFileStore } from '@/stores/modules/file'
+import { useBaseFileStore, useFileItemStore, useFileNodeStore } from '@/stores/modules/file'
+import { useViewFileStore } from '@/stores/modules/viewFile';
 import type { IFileItem } from '@/types/file';
 
 const { breadcrumbs, isTree } = storeToRefs(useBaseFileStore())

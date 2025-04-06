@@ -1,9 +1,7 @@
 <template>
     <a-modal v-model:visible="isModalShow" :footer="false" :closable="false" :fullscreen="currentItem?.needFullscreen"
         :body-style="{ padding: 0, height: '100%' }" :width="460" unmount-on-close>
-        <div class="min-h-[600px]">
-            <display-comp :comp="currentItem?.component" />
-        </div>
+        <display-comp :comp="currentItem?.component" />
         <template #title>
             <a-tooltip content="返回">
                 <icon-backward class="hover:text-h-blue scale-150 absolute top-4 left-6" @click="isModalShow = false" />
@@ -31,7 +29,7 @@
 <script setup lang="ts">
 import { getIconByFilename } from '@/constants/fileIcon';
 import { useAppStore } from '@/stores/modules/app';
-import { useViewFileStore } from '@/stores/modules/file';
+import { useViewFileStore } from '@/stores/modules/viewFile';
 import DisplayComp from './display-comp.vue';
 
 const { isModalShow, file, currentItem } = storeToRefs(useViewFileStore())
